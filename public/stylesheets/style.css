@@ -119,12 +119,11 @@ h2{
 
 /***** About *****/
 #about{
-	padding: 5rem 3rem;
+	padding: 6rem 3rem;
 }
 
 #aboutPhoto{
-	width: 250px;
-	height: 250px;
+	max-width: 80%;
 	border-radius: 50%;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -250,8 +249,7 @@ h2{
 
 /***** Portfolio *****/
 #portfolio{
-	padding-top: 3rem;
-	padding-bottom: 4rem;
+	padding: 3rem 0 6rem;
 }
 
 .overlayContainer{
@@ -350,20 +348,23 @@ svg{
 .myPortfolio{
 	margin-top: 10rem;
 	margin-bottom: 5rem;
-	padding: 5rem 0;
+	padding: 6rem 0 5rem;
 }
+
+
 
 /***** Contact *****/
 #contact{
 	color: #fff;
 	/* min-height: 1000px; */
-	padding-top: 33rem;
+	padding-top: 30rem;
 	background-image:  linear-gradient(
     	rgba(32,37,41,0.7), 
     	rgba(32,37,41,0.7)),
 	url("../images/kiwihug-264572-unsplash.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;	
+	background-position: center;
 	background-attachment: fixed;
 }
 
