@@ -5,7 +5,8 @@
 	h2 {font-size: 3rem;}	
 }
 
-html{
+html, body{
+	width:100%;
 	overflow-x: hidden; 
 	scroll-behavior: smooth;
 }
@@ -347,7 +348,7 @@ svg{
 }
 
 .myPortfolio{
-	margin-top: 7rem;
+	margin-top: 10rem;
 	margin-bottom: 5rem;
 	padding: 5rem 0;
 }
