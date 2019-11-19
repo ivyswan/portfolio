@@ -364,8 +364,9 @@ svg{
 	url("../images/kiwihug-264572-unsplash.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;	
-	background-position: center!important;
-	background-attachment: fixed!important;
+	background-position: center;
+	background-attachment: fixed;
+	z-index: -10;
 }
 
 #contactMe{
