@@ -351,8 +351,6 @@ svg{
 	padding: 6rem 0 5rem;
 }
 
-
-
 /***** Contact *****/
 #contact{
 	color: #fff;
@@ -366,7 +364,6 @@ svg{
 	background-size: cover;	
 	background-position: center;
 	background-attachment: fixed;
-	z-index: -10;
 }
 
 #contactMe{

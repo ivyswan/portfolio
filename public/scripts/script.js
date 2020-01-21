@@ -14,3 +14,6 @@ menuIcon.addEventListener("click",function(){
 function menuFunction(x) {
 	x.classList.toggle("menuChange");
   }
+
+// Dynamic footer year
+document.getElementById("year").innerHTML = new Date().getFullYear();
