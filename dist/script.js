@@ -1,0 +1,2 @@
+$(window).scroll((function(){$("nav").toggleClass("scrolled",$(this).scrollTop()>50)}));var menuIcon=document.querySelector(".navbar-toggler"),transparentMenu=document.querySelector("#navbar");function menuFunction(e){e.classList.toggle("menuChange")}menuIcon.addEventListener("click",(function(){transparentMenu.classList.toggle("darkMenu")})),document.getElementById("year").innerHTML=(new Date).getFullYear();
+//# sourceMappingURL=script.js.map

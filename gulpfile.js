@@ -1,0 +1,47 @@
+const { src, dest, watch, series } = require("gulp");
+const sass = require("gulp-sass");
+const postcss = require("gulp-postcss");
+const cssnano = require("cssnano");
+const terser = require("gulp-terser");
+const browsersync = require("browser-sync").create();
+
+// Sass Task
+function scssTask() {
+  return src("public/scss/styles.scss", { sourcemaps: true })
+    .pipe(sass())
+    .pipe(postcss([cssnano()]))
+    .pipe(dest("dist", { sourcemaps: "." }));
+}
+
+// JavaScript Task
+function jsTask() {
+  return src("public/scripts/script.js", { sourcemaps: true })
+    .pipe(terser())
+    .pipe(dest("dist", { sourcemaps: "." }));
+}
+
+// Browsersync Tasks
+function browsersyncServe(cb) {
+  browsersync.init({
+    port: 3000,
+    proxy: "http://localhost:3000/"
+  });
+  cb();
+}
+
+function browsersyncReload(cb) {
+  browsersync.reload();
+  cb();
+}
+
+// Watch Task
+function watchTask() {
+  watch("*.ejs", browsersyncReload);
+  watch(
+    ["public/scss/**/*.scss", "public/js/**/*.js"],
+    series(scssTask, jsTask, browsersyncReload)
+  );
+}
+
+// Default Gulp task
+exports.default = series(scssTask, jsTask, browsersyncServe, watchTask);
