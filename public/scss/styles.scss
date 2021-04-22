@@ -4,109 +4,81 @@ $md: 768px;
 $sm: 576px;
 $xs: 0;
 
-/* tablets/desktops and up ----------- */
-@media (min-width: 992px) {
-  h1 {
-    font-size: 4rem;
-  } /*1rem = 16px*/
-  h2 {
-    font-size: 3rem;
-  }
-}
+$font-heading: "Antic Didone", serif;
+$font-body: "Noto Sans KR", sans-serif;
 
 html,
 body {
   width: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
-}
-
-a {
-  color: #ff6584;
-  -transition: all 0.3s;
-}
-
-h1 {
-  letter-spacing: 5px;
-}
-
-ul {
-  list-style-type: none;
-}
-
-/***** Fonts *****/
-body {
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: $font-body;
+  font-weight: 100;
 }
 
 h1,
-a.navbar-brand {
-  font-family: "Antic Didone", serif;
-  text-transform: uppercase;
-}
-
-h2 {
-  font-family: "Antic Didone", serif;
+h2,
+h3,
+h4,
+h5 {
+  font-family: $font-heading;
 }
 
 /***** Navigation *****/
-
 .navbar {
   transition: 500ms ease;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
+  .navbar-brand {
+    font-family: $font-heading;
+    text-transform: uppercase;
+  }
+  li a {
+    font-family: $font-heading;
+  }
+  .button:active,
+  button:active,
+  .button:focus,
+  button:focus,
+  .button:hover,
+  button:hover {
+    outline: none;
+  }
+  .navbar-toggler {
+    border: none;
+    .bar {
+      display: inline-block;
+      cursor: pointer;
+    }
+    .bar1,
+    .bar2,
+    .bar3 {
+      width: 20px;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.8);
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+    .menuChange .bar1 {
+      transform: rotate(-45deg) translate(-3px, 6px);
+      background-color: #fff;
+    }
+    .menuChange .bar2 {
+      opacity: 0;
+    }
 
-.navbar-toggler {
-  border: none;
+    .menuChange .bar3 {
+      transform: rotate(45deg) translate(-3px, -8px);
+      background-color: #fff;
+    }
+  }
 }
 
 .navbar.scrolled {
   background-color: rgba(32, 37, 41, 0.9);
 }
 
-.navbar-brand {
-  letter-spacing: 2px;
-}
-
 .darkMenu {
   background: rgba(32, 37, 41, 0.9);
-}
-
-.button:active,
-button:active,
-.button:focus,
-button:focus,
-.button:hover,
-button:hover {
-  outline: none;
-}
-
-.bar {
-  display: inline-block;
-  cursor: pointer;
-}
-.bar1,
-.bar2,
-.bar3 {
-  width: 30px;
-  height: 5px;
-  background-color: rgba(255, 255, 255, 0.8);
-  margin: 6px 0;
-  transition: 0.4s;
-}
-.menuChange .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px);
-  background-color: #fff;
-}
-.menuChange .bar2 {
-  opacity: 0;
-}
-
-.menuChange .bar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(45deg) translate(-8px, -8px);
-  background-color: #fff;
 }
 
 /***** Jumbotron *****/
@@ -120,30 +92,41 @@ button:hover {
     url("../images/wang-kenan-nADyJKsjfx4-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.jumbotron hr {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  width: 250px;
-}
-
-.btn {
-  border-radius: 0;
+  h1 {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 4rem;
+    letter-spacing: 5px;
+    @media (max-width: $md) {
+      font-size: 3rem;
+    }
+    @media (max-width: $sm) {
+      font-size: 2rem;
+    }
+  }
+  hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 250px;
+  }
+  a {
+    font-size: 1rem;
+  }
+  .btn {
+    border-radius: 0;
+  }
 }
 
 /***** About *****/
 #about {
   padding: 6rem 3rem 5rem;
-}
-
-#aboutPhoto {
-  max-width: 80%;
-  border-radius: 50%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.about {
-  margin-top: 3rem;
+  img {
+    max-width: 80%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .about-me {
+    margin-top: 3rem;
+  }
 }
 
 /***** Web Development *****/
@@ -208,15 +191,20 @@ button:hover {
   color: #a8acaf;
 }
 
-/***** Web Development - sub *****/
-.webDevelopment a:hover {
-  text-decoration: none;
-  color: #ff6584;
-  border-bottom: solid #ff6584;
-}
-
-.webDevelopment img {
-  width: 600px;
+/***** Web Development - page *****/
+.webDevelopment {
+  a {
+    color: #ff6584;
+    transition: 0.2s ease;
+    &:hover {
+      text-decoration: none;
+      color: #ff6584;
+      border-bottom: solid #ff6584;
+    }
+  }
+  img {
+    width: 600px;
+  }
 }
 
 /***** Carousel *****/
@@ -272,10 +260,15 @@ button:hover {
 /***** Portfolio *****/
 #myPortfolio {
   padding: 3rem 0 6rem;
-}
-
-.overlayContainer {
-  height: 220px;
+  p {
+    text-transform: uppercase;
+  }
+  h2 {
+    margin-bottom: 2rem;
+  }
+  .overlayContainer {
+    height: 220px;
+  }
 }
 
 .overlayRow:nth-of-type(1) .overlayContainer:nth-of-type(1) {
@@ -385,8 +378,6 @@ svg {
   left: 100%;
   right: 0%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   white-space: nowrap;
   transition: 0.8s ease;
@@ -395,6 +386,7 @@ svg {
 .overlayText a {
   color: #fff;
   text-decoration: none;
+  transition: 0.3s ease;
 }
 
 .overlayText a:hover {
@@ -409,16 +401,24 @@ svg {
   left: 50%;
 }
 
-/***** Portfolio - sub *****/
-#myPortfolio img {
-  width: 500px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.myPortfolio {
-  margin-top: 10rem;
-  margin-bottom: 5rem;
-  padding: 6rem 0 5rem;
+/***** Portfolio - page *****/
+#portfolio-page {
+  padding: 3rem 0 6rem;
+  .myPortfolio {
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+    padding: 6rem 0 5rem;
+    @media (max-width: $md) {
+      padding: 6rem 2rem 5rem;
+    }
+  }
+  img {
+    width: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  a {
+    font-size: 0.8rem;
+  }
 }
 
 /***** Contact *****/
@@ -435,28 +435,32 @@ svg {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-}
-
-#contactMe {
-  height: 300px;
-  background-color: rgba(32, 37, 41, 0.9);
-}
-
-#contactMe ul {
-  padding: 0;
-  margin-top: 9rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-#contactMe a {
-  font-size: 4rem;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-#contactMe a:hover {
-  color: #fff;
+  .social {
+    height: 300px;
+    background-color: rgba(32, 37, 41, 0.9);
+    ul {
+      padding: 0;
+      margin-top: 9rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      list-style-type: none;
+      a {
+        font-size: 4rem;
+        color: rgba(255, 255, 255, 0.5);
+        transition: 0.5s ease;
+        &:hover {
+          color: #fff;
+        }
+        @media (max-width: $md) {
+          font-size: 3rem;
+        }
+        @media (max-width: $sm) {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
 }
 
 /* #contact h2{
@@ -483,4 +487,7 @@ svg {
   background-color: rgba(32, 37, 41, 0.9);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.5);
+  p {
+    font-size: 0.9rem;
+  }
 }

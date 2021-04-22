@@ -36,9 +36,9 @@ function browsersyncReload(cb) {
 
 // Watch Task
 function watchTask() {
-  watch("*.ejs", browsersyncReload);
+  watch("views/**/*.ejs", browsersyncReload);
   watch(
-    ["public/scss/**/*.scss", "public/js/**/*.js"],
+    ["public/scss/**/*.scss", "public/scripts/**/*.js"],
     series(scssTask, jsTask, browsersyncReload)
   );
 }
