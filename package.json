@@ -12,6 +12,7 @@
   "author": "Ivy Swan",
   "license": "ISC",
   "dependencies": {
+    "animate.css": "^4.1.1",
     "concurrently": "^6.0.2",
     "cssnano": "^5.0.1",
     "ejs": "^2.7.1",

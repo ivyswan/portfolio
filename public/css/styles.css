@@ -250,19 +250,19 @@ svg {
   left: 50%; }
 
 /***** Portfolio - page *****/
-#portfolio-page {
+#portfolio {
   padding: 3rem 0 6rem; }
-  #portfolio-page .myPortfolio {
+  #portfolio .myPortfolio {
     margin-top: 10rem;
     margin-bottom: 5rem;
     padding: 6rem 0 5rem; }
     @media (max-width: 768px) {
-      #portfolio-page .myPortfolio {
+      #portfolio .myPortfolio {
         padding: 6rem 2rem 5rem; } }
-  #portfolio-page img {
+  #portfolio img {
     width: 500px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-  #portfolio-page a {
+  #portfolio a {
     font-size: 0.8rem; }
 
 /***** Contact *****/
